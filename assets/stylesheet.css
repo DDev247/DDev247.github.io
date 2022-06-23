@@ -1,3 +1,16 @@
+.body {
+    background-color: rgb(100, 100, 100);
+}
+
 .h1 {
     text-align: center;
+}
+
+/* Header */
+.topbar-ddev {
+    background-color: rgb(175, 175, 175);
+}
+
+.topbar-link {
+    color: black;
 }
