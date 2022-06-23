@@ -12,5 +12,6 @@
 }
 
 .topbar-link {
-    color: black;
+    color: white;
+    vertical-align: middle;
 }
