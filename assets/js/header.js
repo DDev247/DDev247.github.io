@@ -54,6 +54,7 @@ header.appendChild(link4);
 
 
 const header_mobile = document.createElement("header");
+header_mobile.tagName = "header-mobile"
 
 const mobile_link1 = document.createElement("a");
 link1.href = "https://ddev247.github.io/home";
