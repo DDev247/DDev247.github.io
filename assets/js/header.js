@@ -81,5 +81,5 @@ header_mobile.appendChild(mobile_link2);
 header_mobile.appendChild(mobile_link3);
 header_mobile.appendChild(mobile_link4);
 
-document.getElementById("content").insertBefore(header);
-document.getElementById("header").after(header);
+document.getElementById("content").insertBefore(header, null);
+document.getElementById("header").after(header, null);
