@@ -29,8 +29,6 @@ const link1Img = document.createElement("img");
 link1Img.src = "https://ddev247.github.io/assets/logo25.png";
 link1Img.alt = "Home";
 
-link1.appendChild(link1Img);
-
 const link2 = document.createElement("a");
 link2.className = "topbar-link";
 link2.href = "https://ddev247.github.io/dev";
@@ -45,6 +43,8 @@ const link4 = document.createElement("a");
 link4.className = "topbar-link";
 link4.href = "https://ddev247.github.io/about";
 link4.text = "About";
+
+link1.appendChild(link1Img);
 
 header.appendChild(link1);
 header.appendChild(link2);
