@@ -23,7 +23,6 @@ header.className = "topbar-ddev";
 header.id = "header";
 
 const link1 = document.createElement("a");
-link1.className = "topbar-link";
 link1.href = "https://ddev247.github.io/home";
 
 const link1Img = document.createElement("img");
@@ -84,5 +83,5 @@ header_mobile.appendChild(mobile_link2);
 header_mobile.appendChild(mobile_link3);
 header_mobile.appendChild(mobile_link4);
 
-document.getElementById("content").insertBefore(header, null);
+document.getElementById("headerDiv").insertBefore(header, null);
 document.getElementById("header").after(header_mobile);
