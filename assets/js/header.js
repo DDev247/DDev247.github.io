@@ -67,14 +67,17 @@ mobile_link1Img.alt = "Home";
 mobile_link1.appendChild(link1Img);
 
 const mobile_link2 = document.createElement("a");
+mobile_link2.className = "link";
 mobile_link2.href = "https://ddev247.github.io/dev";
 mobile_link2.text = "Developer";
 
 const mobile_link3 = document.createElement("a");
+mobile_link3.className = "link";
 mobile_link3.href = "https://ddev247.github.io/dev/blogs";
 mobile_link3.text = "Blogs";
 
 const mobile_link4 = document.createElement("a");
+mobile_link4.className = "link";
 mobile_link4.href = "https://ddev247.github.io/about";
 mobile_link4.text = "About";
 
