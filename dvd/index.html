@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DVD Logo thing</title>
+    </head>
+    <body>
+
+        <style>
+
+            body {
+                margin: 0;
+                background-color: black;
+                font-family: Roboto;
+                color: white;
+            }
+
+            img {
+                display: none;
+            }
+
+            button {
+                width: 48px;
+                height: 48px;
+
+                position: absolute;
+
+                left: 10px;
+                bottom: 10px;
+
+                background-color: rgba(0, 0, 0, 0.5);
+
+                border: none;
+                border-radius: 10px;
+            }
+
+            button img {
+                display: inline;
+                opacity: 0.25;
+                transition: opacity 1s;
+            }
+
+            button:hover img {
+                display: inline;
+                opacity: 1;
+            }
+
+            div {
+                width: 360px;
+                height: 260px;
+
+                display: none;
+
+                position: absolute;
+                bottom: 10px;
+                left: calc(50% - 160px);
+                
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                border-radius: 10px;
+
+                margin: 0px 0px;
+
+                animation-name: fadein;
+                animation-duration: 500ms;
+                animation-iteration-count: 1;
+            }
+
+            div div {
+                margin: 10px 10px;
+            }
+
+            @keyframes fadein {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            div h1 {
+                text-align: center;
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+
+            div h4 {
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+
+            div input {
+                border: none;
+                border-radius: 5px;
+                width: 50px;
+            }
+
+            div p {
+                position: relative;
+                left: 64px;
+                top: -20px;
+
+                margin: 0;
+            }
+
+            p {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+
+                margin: 0;
+                opacity: 0.25;
+
+                transition: opacity 1s;
+            }
+
+            p:hover {
+                opacity: 1;
+            }
+
+            h2 {
+                width: 72px;
+
+                position: absolute;
+
+                left: 72px;
+                bottom: 34px;
+                margin: 0;
+            
+                opacity: 0.25;
+                transition: opacity 1s;
+
+                font-size: 14px;
+
+                animation-name: fadein2;
+                animation-duration: 500ms;
+                animation-iteration-count: 1;
+            }
+
+            @keyframes fadein2 {
+                0% { opacity: 0; }
+                100% { opacity: 0.25; }
+            }
+
+            h2:hover  {
+                opacity: 1;
+            }
+
+        </style>
+
+        <!--<h1 style="height: 64px;">This is the DVD logo thingy</h1>-->
+
+        <p id="fpsText">0 FPS</p>
+        <canvas id="canvas"> </canvas>
+        
+        <img id="dvdLogo" src="dvd.png" alt="logo">
+
+        <button onclick="opt_hidden = !opt_hidden; document.getElementById('options').style.display = opt_hidden ? 'none' : 'inline'">
+            <img width="32" height="32" alt="options" src="expand.png">
+        </button>
+
+        <h2 id="velX">velX: 2</h2>
+        <h2 id="velY" style="bottom: 18px;">velY: 2</h2>
+        <h2 id="posX" style="left: 128px;">x: 2</h2>
+        <h2 id="posY" style="left: 128px; bottom: 18px;">y: 2</h2>
+
+        <div id="options">
+            <h1>Options</h1>
+
+            <h4>Frame time</h4>
+            <input id="frameTime" onchange="frametime = document.getElementById('frameTime').value;" min="1" value="8" type="number" title="Frame time">
+            <p>ms</p>
+
+            <input id="show" type="checkbox" checked="true" onchange="document.getElementById('fpsText').style.display = document.getElementById('show').checked ? 'inline' : 'none'" title="Show FPS">
+            <label for="show">Show FPS</label>
+
+            <input id="clickMove" type="checkbox" onchange="clickMove = document.getElementById('clickMove').checked;" title="Show FPS">
+            <label for="clickMove">Click to move</label>
+
+            <input id="debug" type="checkbox" onchange="debug = document.getElementById('debug').checked;" title="Show Debug">
+            <label for="debug">Debug info</label>
+
+            <h4>Bounce Sound</h4>
+            <select id="bounceSelect" onchange="bounceIndex = document.getElementById('bounceSelect').value" title="Bounce Sound">
+                <option value="0">No sound</option>
+                <option value="1">Bounce 1</option>
+                <option value="2">Bounce 2</option>
+                <option value="3">Bounce 3</option>
+                <option value="4">Bounce 4</option>
+            </select>
+
+            <br>
+            <input id="volume" style="width: 250px;" type="range" step="0.1" onchange="volume = document.getElementById('volume').value / 100;" min="0" value="50" max="100" title="Volume">
+            <label for="volume">Volume</label>
+
+        </div>
+
+        <script>
+
+            // DVD logo script
+            // 
+            // DDev - 2022
+
+            const DVD_LOGO = document.getElementById("dvdLogo");
+            const width = 339;
+            const height = 149;
+
+            var opt_hidden = true;
+            var clickMove = false;
+            var debug = false;
+
+            var volume = 0.5;
+
+            var bounce1 = new Audio('sounds/bounce1.mp3');
+            var bounce2 = new Audio('sounds/bounce2.mp3');
+            var bounce3 = new Audio('sounds/bounce3.mp3');
+            var bounce4 = new Audio('sounds/bounce4.mp3');
+
+            var bounceIndex = 0;
+
+            const velX = document.getElementById("velX");
+            const velY = document.getElementById("velY");
+            const posX = document.getElementById("posX");
+            const posY = document.getElementById("posY");
+
+            var COLOR = "#0101ff";
+            
+            function drawSpriteAt(x, y) {
+                CANVAS_CONTEXT.drawImage(DVD_LOGO, x, y, width/2, height/2);
+
+                CANVAS_CONTEXT.globalCompositeOperation = "source-in";
+
+                CANVAS_CONTEXT.fillStyle = COLOR;
+                CANVAS_CONTEXT.fillRect(x, y, width, height);
+            }
+
+            const CANVAS = document.getElementById("canvas");
+
+            var mouseX;
+            var mouseY;
+
+            document.onmousemove = (event) => {
+                mouseX = event.x;
+                mouseY = event.y;
+                //console.log("MOVE");
+            };
+
+            CANVAS.onclick = (event) => {
+                if(clickMove) {
+                    x = mouseX;
+                    y = mouseY;
+                }
+                //console.log("CLCIK");
+            };
+
+            const CANVAS_CONTEXT = CANVAS.getContext("2d");
+
+            var RUNNING = true;
+            var frame = 0;
+            var fps = 0;
+
+            var velocityX = 2;
+            var velocityY = 2;
+
+            var x = 10;
+            var y = 10;
+        
+            function PhysicsCheckRectPoint(x1, y1, x2, y2, px, py)
+            {
+                if (px > x1 && px < x2 && py > y1 && py < y2)
+                    return true;
+                return false;
+            }
+
+            function PhysicsPlayerRectPoints(rectX, rectY, rectW, rectH)
+            {
+                /*
+                    1    2
+            
+                    3    4
+                */
+            
+                var p1 = PhysicsCheckRectPoint(rectX, rectY, rectX + rectW, rectY + rectH, x + width/2, y);
+                var p2 = PhysicsCheckRectPoint(rectX, rectY, rectX + rectW, rectY + rectH, x, y);
+                var p3 = PhysicsCheckRectPoint(rectX, rectY, rectX + rectW, rectY + rectH, x + width/2, y + height/2);
+                var p4 = PhysicsCheckRectPoint(rectX, rectY, rectX + rectW, rectY + rectH, x, y + height/2);
+            
+                if(p1 || p2 || p3 || p4)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            var frametime = 8;
+
+            var update = () => {
+
+                CANVAS.height = window.innerHeight - 4;
+                CANVAS.width = window.innerWidth - 2.5;
+
+                if(RUNNING) {
+                    CANVAS_CONTEXT.clearRect(0,0,9999999,9999999);
+
+                    x += velocityX;
+                    y += velocityY;
+
+                    //CANVAS_CONTEXT.fillText(fps, 0, 0 + 20);
+
+                    //CANVAS_CONTEXT.fillRect(x, y, 10, 10);
+                    //CANVAS_CONTEXT.fillRect(x + width/2, y, 10, 10);
+                    //CANVAS_CONTEXT.fillRect(x, y + height/2, 10, 10);
+                    //CANVAS_CONTEXT.fillRect(x + width/2, y + height/2, 10, 10);
+
+                    drawSpriteAt(x,y);
+                }
+
+                let thing = debug ? "inline" : "none";
+
+                velX.style.display = thing;
+                velY.style.display = thing;
+                posX.style.display = thing;
+                posY.style.display = thing;
+
+                velX.textContent = "velX:" + velocityX.toString();
+                velY.textContent = "velY:" + velocityY.toString();
+
+                posX.textContent = "posX:" + x.toString();
+                posY.textContent = "posY:" + y.toString();
+
+                frame++;
+
+                setTimeout(update, frametime);
+            };
+            update();
+
+            // 1027
+            // 933
+
+            function randomVel(velocity) {
+                
+            }
+
+            var color_index = 0;
+            const color_list = [
+                "#0078ff",
+                "#bd00ff",
+                "#ff9a00",
+                "#01ff1f",
+                "#e3ff00",
+                "#7e29d4",
+                "#bf40bf",
+            ];
+
+            function randomColor() {
+
+                color_index++;
+
+                if(color_index == color_list.length - 1) {
+                    color_index = 0;
+                }
+
+                COLOR = color_list[color_index];
+
+                // bounce
+                // console.log(bounceIndex);
+                switch (bounceIndex) {
+                    case "0":
+                        break;
+                    case "1":
+                        bounce1.volume = volume;
+                        bounce1.play();
+                        break;
+                    case "2":
+                        bounce2.volume = volume;
+                        bounce2.play();
+                        break;
+                    case "3":
+                        bounce3.volume = volume;
+                        bounce3.play();
+                        break;
+                    case "4":
+                        bounce4.volume = volume;
+                        bounce4.play();
+                        break;
+                    default:
+                        break;
+                }
+
+                /*
+                COLOR = "#" + Math.floor(Math.random()*16777215).toString(16);
+                console.log(COLOR);
+                if(COLOR.length < 6) {
+                    COLOR += "a";
+                    console.log("A");
+                }
+
+                var c = COLOR.substring(1);      // strip #
+                var rgb = parseInt(c, 16);   // convert rrggbb to decimal
+                var r = (rgb >> 16) & 0xff;  // extract red
+                var g = (rgb >>  8) & 0xff;  // extract green
+                var b = (rgb >>  0) & 0xff;  // extract blue
+                            
+                var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+                            
+                if (luma < 40) {
+                    COLOR = "#0101ff";
+                }
+                console.log(COLOR);
+                */
+            }
+
+            var updateColl = () => {
+                
+                const collision_left  = PhysicsPlayerRectPoints(-10, 0, 10, CANVAS.height);
+                const collision_right = PhysicsPlayerRectPoints(CANVAS.width, 0, 10, CANVAS.height);
+
+                const collision_up    = PhysicsPlayerRectPoints(0, -10, CANVAS.width, 10);
+                const collision_down  = PhysicsPlayerRectPoints(0, CANVAS.height, CANVAS.width, 10);
+
+                if(collision_left) {
+                    //console.log("left");
+                    velocityX = -velocityX;
+                
+                    randomColor();
+                }
+                if(collision_right) {
+                    //console.log("right");
+                    velocityX = -velocityX;
+                
+                    randomColor();
+                }
+
+                if(collision_up) {
+                    //console.log("up");
+                    velocityY = -velocityY;
+                
+                    randomColor();
+                }
+                if(collision_down) {
+                    //console.log("down");
+                    velocityY = -velocityY;
+
+                    randomColor();
+                }
+
+                setTimeout(updateColl, frametime);
+            };
+            updateColl();
+
+            var fpsText = document.getElementById("fpsText");
+
+            setInterval(() => {
+                fps = frame;
+                frame = 0;
+                //console.log("FPS: " + fps.toString());
+
+                fpsText.textContent = fps.toString() + " FPS";
+            }, 1000);
+
+            console.log("Loaded!");
+
+        </script>
+    
+    </body>
+</html>
