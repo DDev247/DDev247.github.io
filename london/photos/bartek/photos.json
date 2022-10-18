@@ -1,0 +1,22 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "bartek": {
+            "credit": "Bartek Kopecki",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "bartek1",
+                    "url": "/london/photos/home/bartek1.jpg",
+                    "name": "Big Ben"
+                },
+                "2": {
+                    "id": "bartek2",
+                    "url": "/london/photos/home/bartek2.jpg",
+                    "name": "Natural History Museum"
+                }
+            }
+        }
+    }
+}

@@ -154,7 +154,12 @@ footer div p a {
 
 .view-handler {
     padding-left: 0%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+.view-buttons {
+    padding-left: 0%;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .photo {

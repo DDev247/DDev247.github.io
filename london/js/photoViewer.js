@@ -1,6 +1,3 @@
-const URL = document.getElementById("viewerScript").getAttribute("cURL");
-const HANDLER_ID = document.getElementById("viewerScript").getAttribute("cHandler");
-const HEIGHT = document.getElementById("viewerScript").getAttribute("cHeight");
 
 function Get(yourUrl){
     var Httpreq = new XMLHttpRequest(); // a new request
@@ -20,7 +17,11 @@ function getParameterByName(name, url = window.location.href) {
 
 const _ALBUM = getParameterByName("album");
 
-window.addEventListener('load', (event) => {
+const photoLoad = () => {
+    const URL = document.getElementById("viewerScript").getAttribute("cURL");
+    const HANDLER_ID = document.getElementById("viewerScript").getAttribute("cHandler");
+    const HEIGHT = document.getElementById("viewerScript").getAttribute("cHeight");
+
     let handler = document.getElementById(HANDLER_ID);
     let json = JSON.parse(Get(URL + "/photos.json"));
 
@@ -41,7 +42,7 @@ window.addEventListener('load', (event) => {
     
                     img.onclick = (e) => {
                         a = document.createElement('a');
-                        a.href = "/london/explore/view.html?album=" + e.target.getAttribute("album") + "&index=" + e.target.getAttribute("index") + "&prev=" + window.location.pathname + "?authorName=" + json.photos[element].credit.replace(' ', '-');
+                        a.href = "/london/explore/view.html?album=" + e.target.getAttribute("album") + "&index=" + e.target.getAttribute("index") + "&prev=" + window.location.pathname;
                         a.click();
                         a.remove();
                     }
@@ -65,7 +66,7 @@ window.addEventListener('load', (event) => {
 
                 img.onclick = (e) => {
                     a = document.createElement('a');
-                    a.href = "/london/explore/view.html?album=" + e.target.getAttribute("album") + "&index=" + e.target.getAttribute("index") + "&prev=" + window.location.pathname + "?authorName=" + obj.credit.replace(' ', '-');
+                    a.href = "/london/explore/view.html?album=" + e.target.getAttribute("album") + "&index=" + e.target.getAttribute("index") + "&prev=" + window.location.pathname;
                     a.click();
                     a.remove();
                 }
@@ -75,4 +76,4 @@ window.addEventListener('load', (event) => {
     else {
         console.error("Error: Invalid JSON type");
     }
-});
+};

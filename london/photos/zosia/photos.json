@@ -3,7 +3,7 @@
     "photos": {
         "zosia": {
             "credit": "Zofia Kowalczyk",
-            "description": "Homepage Photos",
+            "description": "Photos",
             "year": "2022",
             "photos": {
                 "1": {
@@ -20,6 +20,11 @@
                     "id": "zosia3",
                     "url": "/london/photos/home/zosia3.jpg",
                     "name": "Grafitti"
+                },
+                "4": {
+                    "id": "zosia4",
+                    "url": "https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/309624917_638805157800744_8596587422441823089_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=NidALNnvt1UAX8FtDrV&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdTCWkJ1lyM5JhPqhnutwiXbG-8QhVBp1GiythJ2qbhzDA&oe=63736F26",
+                    "name": "China Town"
                 }
             }
         }

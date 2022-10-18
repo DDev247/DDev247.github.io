@@ -18,10 +18,14 @@ function getParameterByName(name, url = window.location.href) {
 const _ALBUM = getParameterByName("album");
 const _INDEX = getParameterByName("index");
 const _PREV = getParameterByName("prev");
+var credit = "";
 
 BACK.onclick = () => {
     a = document.createElement('a');
-    a.href = _PREV;
+    if(_PREV == "/london/")
+        a.href = _PREV;
+    else
+        a.href = _PREV + "?album=" + _ALBUM + "&authorName=" + credit.replace(' ', '-');
     a.click();
     a.remove();
 }
@@ -42,6 +46,10 @@ window.addEventListener('load', (event) => {
         let obj = json.photos[_ALBUM].photos[_INDEX];
         
         let img = handler.querySelector("#photoView");
+        let btnss = document.getElementById("btns");
+        let dbtn = btnss.children[0].children[0];
+        credit = main.credit;
+
         img.title = main.credit + " " + main.year + " / " + obj.name;
         img.alt = main.credit + " " + main.year + " / " + obj.name;
         img.src = obj.url;
@@ -56,11 +64,19 @@ window.addEventListener('load', (event) => {
             a.remove();
         }
 
+        dbtn.onclick = () => {
+            let a = document.createElement('a');
+            a.download = "";
+            a.href = obj.url;
+            a.click();
+            a.remove();
+        }
+
         TITLE.textContent = obj.name;
         CREDIT.textContent = main.credit;
         YEAR.textContent = main.year;
         
-        setInterval((i = img) => {
+        setInterval((i = img, btns=btnss) => {
             let height = window.innerWidth - 50;
             let max = Number.parseInt(i.getAttribute("maxWidth"));
 
@@ -68,6 +84,7 @@ window.addEventListener('load', (event) => {
             
             let w = ((window.innerWidth - 50) / 2) - i.clientWidth/2;
             i.parentElement.style = `padding-left: ${w}px`;
+            btns.style = `padding-left: ${w}px; width: ${i.clientWidth-20}px;`;
         }, 10);
     }
     else {
