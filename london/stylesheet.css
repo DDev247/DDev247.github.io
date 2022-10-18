@@ -41,6 +41,13 @@ header a {
     text-decoration: underline;
 }
 
+header img, footer img {
+    position: relative;
+    margin: 0;
+    padding: 25px 25px;
+    top: -80px;
+}
+
 header h1, footer h1 {
     margin: 0;
     padding: 25px 25px;
