@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>London Photos</title>
+    </head>
+    <body>
+        
+        <header>
+            <div>
+                <h1>London Photos</h1>
+                <a href="./" class="active-btn">Home</a>
+                <a href="./explore">Explore</a>
+                <a href="./contact">Contact</a>
+                <a href="./legal">Legal</a>
+            </div>
+        </header>
+
+        <div id="content" class="content">
+            <h1 class="center">London Photos - 2022</h1>
+            <h3 class="center">Explore the hundreds of photos we made while on our adventure in London.<br>We hope you enjoy them.</h3>
+
+            <div id="photos" class="home-photos">
+            </div>
+            <script id="viewerScript" cHeight="200" cURL="/london/photos/home" cHandler="photos" src="./js/photoViewer.js"></script>
+  
+            <p onclick="let a = document.createElement('a'); a.href='./explore/'; a.click(); a.remove()" class="view-button">View Photos</p>
+
+        </div>
+
+        <footer>
+            <div>
+                <h2>London Photos</h2>
+                <p>Made with ❤️ by 
+                    <a href="https://github.com/DDev247">DDev</a>
+                </p>
+                <a href="./contact">Contact</a>
+                <a href="./legal">Legal</a>
+            </div>
+        </footer>
+
+    </body>
+</html>

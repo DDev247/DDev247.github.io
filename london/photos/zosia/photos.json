@@ -1,0 +1,27 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "zosia": {
+            "credit": "Zofia Kowalczyk",
+            "description": "Homepage Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "zosia1",
+                    "url": "/london/photos/home/zosia1.jpg",
+                    "name": "Camden Road"
+                },
+                "2": {
+                    "id": "zosia2",
+                    "url": "/london/photos/home/zosia2.jpg",
+                    "name": "National Gallery"
+                },
+                "3": {
+                    "id": "zosia3",
+                    "url": "/london/photos/home/zosia3.jpg",
+                    "name": "Grafitti"
+                }
+            }
+        }
+    }
+}
