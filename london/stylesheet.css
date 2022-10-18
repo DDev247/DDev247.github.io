@@ -131,7 +131,7 @@ footer div p a {
     background-color: #00a4f0;
 }
 
-.home-photos {
+.home-photos, .list-photos {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -150,6 +150,20 @@ footer div p a {
 
 .home-photos img:hover {
     opacity: 0.85;
+}
+
+.list-photos img {
+    opacity: 0.85;
+    border-radius: 5px;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    transition: opacity 500ms;
+}
+
+.list-photos img:hover {
+    opacity: 0.95;
 }
 
 .view-handler {
