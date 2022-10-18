@@ -1,0 +1,22 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "dawid": {
+            "credit": "Dawid Byro",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "dawid1",
+                    "url": "/london/photos/home/dawid1.jpg",
+                    "name": "Sky"
+                },
+                "2": {
+                    "id": "dawid2",
+                    "url": "/london/photos/home/dawid2.jpg",
+                    "name": "Blue Whale Skeleton"
+                }
+            }
+        }
+    }
+}
