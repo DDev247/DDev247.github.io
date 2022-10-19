@@ -1,10 +1,22 @@
 
 body {
     margin: 15px;
+    background-color: #181a1b;
+}
+
+body.checked {
+    background-color: white;
+}
+
+body.dark, .dark {
+    background-color: #181a1b !important;
+    color: #e8e6e3 !important;
 }
 
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 5px;
+    transition: background-color 500ms, color 50ms;
 }
 
 header, footer {
@@ -12,24 +24,108 @@ header, footer {
 
     background-color: #F0F0F0;
     border-radius: 5px;
-    box-shadow: 1px 1px 4px 6px #0000000f;
+    box-shadow: rgb(0 0 0 / 6%) 1px 1px 4px 6px;
     margin-bottom: 20px;
+}
+
+header.dark, footer.dark,
+.content.dark {
+    color: #e8e6e3 !important;
+
+    background-color: rgb(32, 35, 37) !important;
+    box-shadow: rgb(0 0 0 / 6%) 1px 1px 4px 6px;
+}
+
+.content.dark h1, .content.dark h2, .content.dark h3,
+.content.dark p, .content.dark a, .content.dark b,
+.content.dark .home-photos, .content.dark .view-top,
+.content.dark .view-top .sketchy-center, .content.dark .view-handler,
+.content.dark .view-buttons, .content.dark .view-buttons div,
+.content.dark .view-buttons div img,
+.content.dark .list-photos {
+    color: #e8e6e3 !important;
+
+    background-color: transparent !important;
+}
+
+footer.dark h1, footer.dark h2, footer.dark a,
+footer.dark p, footer.dark div {
+    color: #e8e6e3 !important;
+
+    background-color: transparent !important;
+}
+
+header.dark img, header.dark div {
+    background-color: transparent !important;
+}
+
+header.dark h1, header.dark h2, header.dark a,
+header.dark p {
+    color: #e8e6e3 !important;
+
+    background-color: transparent !important;
 }
 
 footer {
     height: 150px;
 }
 
-header div {
+header div#desktopHeader {
     display: flex;
+    justify-content: space-between;
+}
+
+header div#mobileHeader {
+    display: flex;
+    flex-direction: column;
+}
+
+header div#mobileHeader div#mobileHeaderTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+header div#mobileHeader div#mobileHeaderBottom {
+    position: absolute;
+    top: 85px;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 70px);
+    padding: 20px;
+}
+
+header div#mobileHeader div#mobileHeaderBottom menu {
+    width: 100%;
+    padding: 10px;
 }
 
 header a {
     margin-top: 40px;
+    height: 40px;
     color: black;
     font-weight: bold;
     text-decoration: none;
     margin-right: 10px;
+}
+
+header .header-right a {
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+    top: 40px;
+}
+
+header #desktopHeader div a {
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+    bottom: 190px;
 }
 
 .link {
@@ -38,7 +134,15 @@ header a {
 }
 
 .active-btn, .link:hover, header a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
+}
+
+.header-right {
+    margin-right: 20px;
+}
+
+header.mobile {
+    height: 165px;
 }
 
 header img, footer img {
@@ -86,7 +190,7 @@ footer div p a {
 .content {
     background-color: #F0F0F0;
     border-radius: 5px;
-    box-shadow: 1px 1px 4px 6px #0000000f;
+    box-shadow: rgb(0 0 0 / 6%) 1px 1px 4px 6px;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -103,8 +207,8 @@ footer div p a {
     text-align: center;
 }
 
-.view-button {
-    background-color: #0098f0;
+.view-button, .view-button.dark {
+    background-color: #0098f0 !important;
     color: white;
     margin: 10px 100px;
     padding: 10px 15px;
@@ -116,8 +220,8 @@ footer div p a {
     border-radius: 5px;
 }
 
-.back-button {
-    background-color: #0098f0;
+.back-button, .back-button.dark {
+    background-color: #0098f0 !important;
     color: white;
     margin: 10px;
 
@@ -134,8 +238,8 @@ footer div p a {
     border-radius: 5px;
 }
 
-.view-button:hover {
-    background-color: #00a4f0;
+.view-button:hover, .view-button.dark:hover {
+    background-color: #00a4f0 !important;
 }
 
 .home-photos, .list-photos {
@@ -153,6 +257,16 @@ footer div p a {
     margin-bottom: 10px;
     
     transition: opacity 500ms;
+}
+
+.home-photos.mobile img {
+    opacity: 0.5;
+    border-radius: 5px;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    transition: opacity 250ms;
 }
 
 .home-photos img:hover {

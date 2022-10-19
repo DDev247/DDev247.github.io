@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./../stylesheet.css">
+        <link rel="stylesheet" href="/london/stylesheet.css">
         <title>London Photos - Explore</title>
+        <link rel="icon" type="image/x-icon" href="/london/favicon.png">
         <meta content="London Photos" property="og:title">
         <meta content="https://ddev247.github.io/london" property="og:url">
         <meta 
@@ -14,16 +15,43 @@
         <meta content="https://ddev247.github.io/london/photos/home/zosia2.jpg" property="og:image">
         <meta name="twitter:card" content="summary_large_image">
     </head>
-    <body>
+    <body onload="check();">
         
         <header>
-            <div>
-                <!-- <h1>London Photos</h1> -->
-                <img src="/london/logos/logo_transparent.png" alt="logo" width="200">
-                <a href="./../">Home</a>
-                <a href="./../explore" class="active-btn">Explore</a>
-                <a href="./../contact">Contact</a>
-                <a href="./../legal">Legal</a>
+            <div id="desktopHeader">
+                <div>
+                    <!-- <h1>London Photos</h1> -->
+                    <img id="logo" src="/london/logos/logo_transparent.png" alt="logo" width="200">
+                    <img id="darkLogo" style="display: none;" src="/london/logos/logo3_transparent.png" alt="logo" width="200">
+                    <a href="/london/">Home</a>
+                    <a href="/london/explore" class="active-btn">Explore</a>
+                    <a href="/london/contact">Contact</a>
+                    <a href="/london/legal">Legal</a>
+                </div>
+                <div class="header-right">
+                    <a onclick="dark();">Dark Mode</a>
+                </div>
+            </div>
+
+            <div id="mobileHeader" style="display: none;">
+                <div id="mobileHeaderTop">
+                    <div>
+                        <!-- <h1>London Photos</h1> -->
+                        <img id="logoMobile" src="/london/logos/logo_transparent.png" alt="logo" width="200">
+                        <img id="darkLogoMobile" style="display: none;" src="/london/logos/logo3_transparent.png" alt="logo" width="200">
+                    </div>
+                    <div class="header-right">
+                        <a onclick="dark();">Dark Mode</a>
+                    </div>
+                </div>
+                <div id="mobileHeaderBottom">
+                    <menu type="toolbar">
+                        <a href="/london/">Home</a>
+                        <a href="/london/explore" class="active-btn">Explore</a>
+                        <a href="/london/contact">Contact</a>
+                        <a href="/london/legal">Legal</a>
+                    </menu>
+                </div>
             </div>
         </header>
 
@@ -32,8 +60,8 @@
 
             <div id="photos" class="list-photos">
             </div>
-            <script id="viewerScript" cHeight="300" cURL="/london/photos/zosia" cHandler="photos" src="./../js/photoViewer.js"></script>
-            <script id="headerScript" src="./../js/headerScript.js"></script>
+            <script id="viewerScript" cHeight="300" cURL="/london/photos/zosia" cHandler="photos" src="/london/js/photoViewer.js"></script>
+            <script id="headerScript" src="/london/js/headerScript.js"></script>
   
         </div>
 
@@ -43,10 +71,12 @@
                 <p>Made with ❤️ by 
                     <a href="https://github.com/DDev247">DDev</a>
                 </p>
-                <a href="./contact">Contact</a>
-                <a href="./legal">Legal</a>
+                <a href="/london/contact">Contact</a>
+                <a href="/london/legal">Legal</a>
             </div>
         </footer>
+
+        <script id="functionalityScript" src="/london/js/functionality.js"></script>
 
     </body>
 </html>
