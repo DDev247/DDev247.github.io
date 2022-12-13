@@ -1,0 +1,27 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "murawska": {
+            "credit": "Aleksandra Murawska",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "murawska1",
+                    "url": "https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/309595163_1739385669767492_4309471112911097565_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=8yCOh_-L6vcAX8DDrMO&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdR8lXA_047fcuKDdwsY2GXZdE_rKaW4KJ7V_sBe8oUhew&oe=6394CBE4",
+                    "name": "Underground Sign"
+                },
+                "2": {
+                    "id": "murawska2",
+                    "url": "https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/311277017_442514974652497_7029311394812778301_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=gSlB94ckD3IAX80kpiv&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdS1DDtgADhSb6ruN1hI3BKDyV6bMnFDvEIIwIKDR04MvQ&oe=6394D104",
+                    "name": "Big Ben"
+                },
+                "3": {
+                    "id": "murawska3",
+                    "url": "https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/310576002_934887617484263_1267823764469968997_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=aaiEaJ3ClpsAX-JOiPY&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdSJShpR-5N8qdL-fqEKwJDVQD5I9wdwJ4WfzqusXbAtng&oe=6394A51A",
+                    "name": "Buckingham Palace"
+                }
+            }
+        }
+    }
+}

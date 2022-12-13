@@ -9,7 +9,8 @@ if (prefersDarkScheme.matches) {
 }
 
 function dark() {
-    DARK_MODE = !DARK_MODE;
+    if(document.body.classList.contains("checked"))
+        DARK_MODE = !DARK_MODE;
 
     var body = document.body;
     var logo = document.getElementById("logo");
@@ -30,6 +31,12 @@ function dark() {
         element.classList.toggle("dark");
     }
 
+    if(!DARK_MODE) {
+        document.body.classList.add("white");
+    }
+    else {
+        document.body.classList.remove("white");
+    }
     document.body.classList.add("checked");
 }
 

@@ -1,0 +1,313 @@
+
+:root, .wdColor {
+    --wdColorAqua:              #33CCCC;
+    --wdColorAutomatic:         #000000;
+    --wdColorBlack:             #000000;
+    --wdColorBlue:              #0000FF;
+    --wdColorBlueGray:          #666699;
+    --wdColorBrightGreen:       #00FF00;
+    --wdColorBrown:             #993300;
+    --wdColorDarkBlue:          #000080;
+    --wdColorDarkGreen:         #003300;
+    --wdColorDarkRed:           #800000;
+    --wdColorDarkTeal:          #003366;
+    --wdColorDarkYellow:        #808000;
+    --wdColorGold:              #FFCC00;
+    --wdColorGray05:            #F3F3F3;
+    --wdColorGray10:            #E6E6E6;
+    --wdColorGray125:           #E0E0E0;
+    --wdColorGray15:            #D9D9D9;
+    --wdColorGray20:            #CCCCCC;
+    --wdColorGray25:            #C0C0C0;
+    --wdColorGray30:            #B3B3B3;
+    --wdColorGray35:            #A6A6A6;
+    --wdColorGray375:           #A0A0A0;
+    --wdColorGray40:            #999999;
+    --wdColorGray45:            #8C8C8C;
+    --wdColorGray50:            #808080;
+    --wdColorGray55:            #737373;
+    --wdColorGray60:            #666666;
+    --wdColorGray625:           #606060;
+    --wdColorGray65:            #595959;
+    --wdColorGray70:            #4C4C4C;
+    --wdColorGray75:            #404040;
+    --wdColorGray80:            #333333;
+    --wdColorGray85:            #262626;
+    --wdColorGray875:           #202020;
+    --wdColorGray90:            #191919;
+    --wdColorGray95:            #0C0C0C;
+    --wdColorGreen:             #008000;
+    --wdColorIndigo:            #333399;
+    --wdColorLavender:          #CC99FF;
+    --wdColorLightBlue:         #3366FF;
+    --wdColorLightGreen:        #CCFFCC;
+    --wdColorLightOrange:       #FF9900;
+    --wdColorLightTurquoise:    #CCFFFF;
+    --wdColorLightYellow:       #FFFF99;
+    --wdColorLime:              #99CC00;
+    --wdColorOliveGreen:        #333300;
+    --wdColorOrange:            #FF6600;
+    --wdColorPaleBlue:          #99CCFF;
+    --wdColorPink:              #FF00FF;
+    --wdColorPlum:              #993366;
+    --wdColorRed:               #FF0000;
+    --wdColorRose:              #FF99CC;
+    --wdColorSeaGreen:          #339966;
+    --wdColorSkyBlue:           #00CCFF;
+    --wdColorTan:               #FFCC99;
+    --wdColorTeal:              #008080;
+    --wdColorTurquoise:         #00FFFF;
+    --wdColorViolet:            #800080;
+    --wdColorWhite:             #FFFFFF;
+    --wdColorYellow:            #FFFF00;
+}
+
+.aqua, .wdColorAqua {
+    color: var(--wdColorAqua);
+}
+
+.auto, .wdColorAutomatic {
+    color: var(--wdColorAutomatic);
+}
+
+.black, .wdColorBlack {
+    color: var(--wdColorBlack);
+}
+
+.blue, .wdColorBlue {
+    color: var(--wdColorBlue);
+}
+
+.bluegray, .wdColorBlueGray {
+    color: var(--wdColorBlueGray);
+}
+
+.brightgreen, .wdColorBlueGray {
+    color: var(--wdColorBlueGray);
+}
+
+.brown, .wdColorBlueGray {
+    color: var(--wdColorBlueGray);
+}
+
+/* DARK COLORS */
+
+.darkblue, .wdColorDarkBlue {
+    color: var(--wdColorDarkBlue);
+}
+
+.darkgreen, .wdColorDarkGreen {
+    color: var(--wdColorDarkGreen);
+}
+
+.darkred, .wdColorDarkRed {
+    color: var(--wdColorDarkRed);
+}
+
+.darkteal, .wdColorDarkTeal {
+    color: var(--wdColorDarkTeal);
+}
+
+.darkyellow, .wdColorDarkYellow {
+    color: var(--wdColorDarkYellow);
+}
+
+.gold, .wdColorGold {
+    color: var(--wdColorGold);
+}
+
+/* GRAYS */
+
+.gray05, .wdColorGray05 {
+    color: var(--wdColorGray05);
+}
+
+.gray10, .wdColorGray10 {
+    color: var(--wdColorGray10);
+}
+
+.gray125, .wdColorGray125 {
+    color: var(--wdColorGray125);
+}
+
+.gray15, .wdColorGray15 {
+    color: var(--wdColorGray15);
+}
+
+.gray20, .wdColorGray20 {
+    color: var(--wdColorGray20);
+}
+
+.gray25, .wdColorGray25 {
+    color: var(--wdColorGray25);
+}
+
+.gray30, .wdColorGray30 {
+    color: var(--wdColorGray30);
+}
+
+.gray35, .wdColorGray35 {
+    color: var(--wdColorGray35);
+}
+
+.gray375, .wdColorGray375 {
+    color: var(--wdColorGray375);
+}
+
+.gray40, .wdColorGray40 {
+    color: var(--wdColorGray40);
+}
+
+.gray45, .wdColorGray45 {
+    color: var(--wdColorGray45);
+}
+
+.gray50, .wdColorGray50 {
+    color: var(--wdColorGray50);
+}
+
+.gray55, .wdColorGray55 {
+    color: var(--wdColorGray55);
+}
+
+.gray60, .wdColorGray60 {
+    color: var(--wdColorGray60);
+}
+
+.gray625, .wdColorGray625 {
+    color: var(--wdColorGray625);
+}
+
+.gray65, .wdColorGray65 {
+    color: var(--wdColorGray65);
+}
+
+.gray70, .wdColorGray70 {
+    color: var(--wdColorGray70);
+}
+
+.gray75, .wdColorGray75 {
+    color: var(--wdColorGray75);
+}
+
+.gray80, .wdColorGray80 {
+    color: var(--wdColorGray80);
+}
+
+.gray85, .wdColorGray85 {
+    color: var(--wdColorGray85);
+}
+
+.gray875, .wdColorGray875 {
+    color: var(--wdColorGray875);
+}
+
+.gray90, .wdColorGray90 {
+    color: var(--wdColorGray90);
+}
+
+.gray95, .wdColorGray95 {
+    color: var(--wdColorGray95);
+}
+
+/* COLORS */
+
+.green, .wdColorGreen {
+    color: var(--wdColorGreen);
+}
+
+.indigo, .wdColorIndigo {
+    color: var(--wdColorIndigo);
+}
+
+.lavender, .wdColorLavender {
+    color: var(--wdColorLavender);
+}
+
+/* LIGHT COLORS */
+
+.lightblue, .wdColorLightBlue {
+    color: var(--wdColorLightBlue);
+}
+
+.lightgreen, .wdColorLightGreen {
+    color: var(--wdColorLightGreen);
+}
+
+.lightorange, .wdColorLightOrange {
+    color: var(--wdColorLightOrange);
+}
+
+.lightturquoise, .wdColorLightTurquoise {
+    color: var(--wdColorLightTurquoise);
+}
+
+.lightyellow, .wdColorLightYellow {
+    color: var(--wdColorLightYellow);
+}
+
+/* OTHER COLORS */
+
+.lime, .wdColorLime {
+    color: var(--wdColorLime);
+}
+
+.olivegreen, .wdColorOliveGreen {
+    color: var(--wdColorOliveGreen);
+}
+
+.orange, .wdColorOrange {
+    color: var(--wdColorOrange);
+}
+
+.paleblue, .wdColorPaleBlue {
+    color: var(--wdColorPaleBlue);
+}
+
+.pink, .wdColorPink {
+    color: var(--wdColorPink);
+}
+
+.plum, .wdColorPlum {
+    color: var(--wdColorPlum);
+}
+
+.red, .wdColorRed {
+    color: var(--wdColorRed);
+}
+
+.rose, .wdColorRose {
+    color: var(--wdColorRose);
+}
+
+.seagreen, .wdColorSeaGreen {
+    color: var(--wdColorSeaGreen);
+}
+
+.skyblue, .wdColorSkyBlue {
+    color: var(--wdColorSkyBlue);
+}
+
+.tan, .wdColorTan {
+    color: var(--wdColorTan);
+}
+
+.teal, .wdColorTeal {
+    color: var(--wdColorTeal);
+}
+
+.turquoise, .wdColorTurquoise {
+    color: var(--wdColorTurquoise);
+}
+
+.violet, .wdColorViolet {
+    color: var(--wdColorViolet);
+}
+
+.white, .wdColorWhite {
+    color: var(--wdColorWhite);
+}
+
+.yellow, .wdColorYellow {
+    color: var(--wdColorYellow);
+}

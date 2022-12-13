@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bubbles</title>
+        <style>
+            body {
+                overflow-x: hidden;
+                overflow-y: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100vh;
+                margin: 0;
+
+                background-color: #8b8bee;
+            }
+
+            * {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .bubble, .bubble-small {
+                border-radius: 100%;
+                background-color: #4040d3;
+                width: 128px;
+                height: 128px;
+                position: absolute;
+                animation: bubbleAnim 2s;   
+            }
+
+            .bubbleSmall {
+                animation: smalllbubbleAnim 2s;
+            }
+
+            @keyframes bubbleAnim {
+                0% { bottom: -128px; }
+                50% { bottom: -32px; }
+                100% { bottom: -128px; }
+            }
+
+            @keyframes smallbubbleAnim {
+                0% { bottom: -128px; }
+                50% { bottom: -16px; }
+                100% { bottom: -128px; }
+            }
+
+            .bubbles {
+
+            }
+        </style>
+    </head>
+    <body onload="bubblez()">
+        <h1>Bubbles Demo</h1>
+        <div class="bubbles" id="bubbles">
+            <!-- <div class="bubble" id="bubble"></div> -->
+        </div>
+
+        <script>
+            function bubblez() {
+                const bubbles = document.getElementById('bubbles');
+
+                let mouseX, mouseY;
+
+                document.onmousemove = (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                };
+
+                setInterval(() => {
+                    var bubble = document.createElement('div');
+                    var bubble2 = document.createElement('div');
+                    bubble.classList.add("bubble");
+                    bubble2.classList.add("bubble");
+                    
+                    bubble.style.marginLeft = (mouseX - 64 - (Math.random() * 10)) + "px";
+                    bubble2.style.marginLeft = (mouseX - 64 + (Math.random() * 10)) + "px";
+
+                    bubbles.appendChild(bubble);
+                    bubbles.appendChild(bubble2);
+                    const id = setInterval((id) => {
+                        bubble.remove();
+                        bubble2.remove();
+                        clearInterval(id);
+                    }, 2500);
+                }, 50);
+
+                setInterval(() => {
+                    var bubble = document.createElement('div');
+                    var bubble2 = document.createElement('div');
+                    bubble.classList.add("bubbleSmall");
+                    bubble2.classList.add("bubbleSmall");
+                    
+                    bubble.style.marginLeft = (mouseX - 64 - (Math.random() * 250)) + "px";
+                    bubble2.style.marginLeft = (mouseX - 64 + (Math.random() * 250)) + "px";
+
+                    bubbles.appendChild(bubble);
+                    bubbles.appendChild(bubble2);
+                    const id = setInterval((id) => {
+                        bubble.remove();
+                        bubble2.remove();
+                        clearInterval(id);
+                    }, 2500);
+                }, 50);
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,333 @@
+
+:root {
+    --header-height: 215px;
+
+    /* 2550px x 3300px */
+    --letter-width: 2550px;
+    --letter-height: 3300px;
+    --letter-small-width: 637.5px;
+    --letter-small-height: 825px;
+    --letter-preview-width: 127.5px;
+    --letter-preview-height: 165px;
+
+    /* 2480px x 3508px */
+
+    --A4-width: 2480px;
+    --A4-height: 3508px;
+    --A4-small-width: 620px;
+    --A4-small-height: 877px;
+    --A4-preview-width: 124px;
+    --A4-preview-height: 175.4px;
+
+    --template-width: calc(var(--letter-preview-width));
+    --template-height: calc(200px + 20px);
+}
+
+header {
+    width: calc(100% - 10px);
+    height: calc(var(--header-height) - 10px);
+    background-color: var(--footer-blue);
+    color: var(--white);
+    padding: 5px;
+
+    border-radius: 0px 0px 10px 10px;
+}
+
+.header-top {
+    height: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-top div {
+    display: flex;
+    gap: 10px;
+}
+
+.header-top p {
+    animation-name: savetext;
+    animation-duration: 500ms;
+    animation-delay: 5s;
+
+    margin: 0;
+    font-size: 14px;
+}
+@keyframes savetext {
+    0% {color: inherit;}
+    100% {color: transparent;}
+}
+
+.header-top h5 {
+    margin: 0;
+    width: auto;
+    cursor:text;
+}
+
+.header-top span {
+    cursor: pointer;
+}
+
+.header-drawer-nav {
+    margin-top: 5px;
+    display: flex;
+    gap: 0px;
+    justify-content: space-evenly;
+}
+
+.header-drawer-nav div {
+    background-color: var(--white);
+    color: black;
+    text-align: center;
+    border-radius: 0px 0px 0px 0px;
+    width: 100%;
+
+    border-top: 2px solid var(--white3);
+    border-bottom: 2px solid var(--white3);
+
+    transition: background-color 500ms ;
+}
+
+.header-drawer-nav div.last {
+    border-radius: 0px 10px 10px 0px;
+    border-right: 2px solid var(--white3);
+}
+
+.header-drawer-nav div.first {
+    border-radius: 10px 0px 0px 10px;
+    border-left: 2px solid var(--white3);
+}
+
+.header-drawer-nav div:hover {
+    background-color: var(--white2);
+}
+
+.header-drawer-items {
+    border-radius: 10px;
+    background-color: var(--white);
+    margin-top: 5px;
+    padding: 5px 10px 5px 10px;
+    height: 165px;
+
+    color: black;
+
+    display: flex;
+    gap: 10px;
+
+    overflow: scroll hidden;
+}
+
+.header-drawer-items::-webkit-scrollbar {
+    background-color: var(--white2);
+
+    border-radius: 10px;
+}
+
+.header-drawer-items::-webkit-scrollbar-thumb {
+    background-color: var(--white3);
+
+    border-radius: 10px;
+}
+
+.header-drawer-items .header-drawer-item {
+    background-color: var(--white2);
+    padding: 10px;
+    text-align: center;
+}
+
+.header-drawer-items .header-drawer-item .header-drawer-item-content {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.header-drawer-items .header-drawer-item .header-drawer-item-content div {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    transition: background-color 500ms;
+    cursor: pointer;
+}
+
+.header-drawer-items .header-drawer-item .header-drawer-item-content div:hover {
+    background-color: var(--white3);
+}
+
+.header-drawer-items .header-drawer-item .header-drawer-item-content div p {
+    margin: 0;
+}
+
+.header-drawer-items .header-drawer-item h3 {
+    position: relative;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.header-drawer-items .header-drawer-item h3.big {
+    position: relative;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.content .color-picker {
+    position: absolute;
+
+    left: calc(50vw / 2 - 10px);
+    top: calc(var(--header-height) + 25px - 10);
+
+    height: 300px;
+    width: 50vw;
+    background-color: var(--white3);
+    box-shadow: 5px 5px 5px 5px var(--shadow);
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+}
+
+.content .color-picker .color-picker-div {
+    flex-grow: 0.25;
+    width: 225px;
+}
+
+.content .color-picker .color-picker-div2 {
+    flex-grow: 0.75;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .color-picker .color-picker-div .color-picker-color {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.content .color-picker .color-picker-div2 p {
+    font-size: 20px;
+}
+
+.content .color-picker .color-picker-div2 .color-picker-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .color-picker .color-picker-div2 .color-picker-top h2 {
+    margin-bottom: 0;
+}
+
+.content .color-picker .color-picker-div2 .color-picker-top p {
+    margin-top: 10px;
+}
+
+.content .color-picker .color-picker-div2 .color-picker-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .color-picker .color-picker-div-button,
+.content .color-picker .color-picker-div-button-blue {
+    border-radius: 5px;
+    background-color: var(--white2);
+
+    width: -moz-fit-content;
+    width: fit-content;
+
+    padding: 5px 15px;
+}
+
+.content .color-picker .color-picker-div-button-blue {
+    background-color: var(--footer-blue);
+}
+
+.content .color-picker .color-picker-div-button:hover {
+    background-color: var(--white);
+}
+
+.content .color-picker .color-picker-div-button-blue:hover {
+    background-color: var(--footer-blue-bright);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    background-color: var(--white2);
+}
+
+.content .document-editor *,
+.content .document-content * {
+    white-space: pre-line;
+}
+
+body {
+    background-color: var(--white2);
+}
+
+.content .document-content,
+.content .document-editor {
+    background-color: white;
+    width: calc(var(--letter-width) - 300px);
+    height: calc(var(--letter-height) - 100px);
+
+    padding: 50px 150px;
+
+    zoom: 0.35;
+    -moz-transform: scale(0.35);
+    /* transform: scale(0.5); */
+    box-shadow: 5px 5px 5px 5px var(--shadow);
+}
+
+.content .document-content {
+    pointer-events: none;
+    z-index: 0;
+}
+
+.content .document-editor {
+    z-index: 1;
+    color: transparent;
+    background: transparent;
+    caret-color: black; /* Or choose your favorite color */
+    position: absolute;
+}
+
+.document-editor span[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.document-editor span {
+    font-size: inherit;
+    font-weight: inherit;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+}
+
+.content .bold {
+    font-weight: bold;
+}
+
+.content .italic {
+    font-style: italic;
+}
+
+.content .underline {
+    text-decoration: underline;
+}
+
+.content h1 {
+    font-size: 100px;
+}
+
+.content p {
+    font-size: 40px;
+}

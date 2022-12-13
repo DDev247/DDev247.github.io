@@ -4,7 +4,7 @@ body {
     background-color: #181a1b;
 }
 
-body.checked {
+body.white {
     background-color: white;
 }
 
@@ -116,6 +116,7 @@ header .header-right a {
     margin-right: 10px;
     position: relative;
     top: 40px;
+    cursor: pointer;
 }
 
 header #desktopHeader div a {

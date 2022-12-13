@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/docs/assets/fontawesome/css/v5-font-face.css">
+        <link rel="stylesheet" href="/docs/assets/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/docs/assets/styles/stylesheet.css">
+        <link rel="stylesheet" href="/docs/assets/styles/docs.css">
+        <link rel="stylesheet" href="/docs/assets/styles/doc-colors.css">
+        <title>DDev Docs</title>
+        <script src="/docs/assets/js/database.js"></script>
+    </head>
+    <body>
+        
+        <header>
+            <div class="header-top">
+                <div id="header-top-right">
+                    <span class="fa-solid fa-bars"></span>
+                    <h5 id="document-name-text" contenteditable>Document Name</h5>
+                    <span class="fa-solid fa-save" onclick="saveDocument()"></span>
+                    <span id="spinner" class="fa-solid fa-gear fa-spin" style="width: 17px; height: 17px; display: none;"></span>
+                </div>
+                <div>
+                    <span class="fa-solid fa-download" onclick="saveToFile()"></span>
+                    <span class="fa-solid fa-home" onclick="load()"></span>
+                </div>
+            </div>
+            <div class="header-drawer">
+                <!-- <div class="header-drawer-nav">
+                    <div class="first">General</div>
+                    <div>Insert</div>
+                    <div>Design</div>
+                    <div class="last">View</div>
+                </div> -->
+                <div class="header-drawer-items">
+                    <div class="header-drawer-item">
+                        <div class="header-drawer-item-content">
+                            <div>
+                                <span class="fa-solid fa-copy darkblue"></span>
+                                <p>Copy</p>
+                            </div>
+                            <div>
+                                <span class="fa-solid fa-paste darkblue"></span>
+                                <p>Paste</p>
+                            </div>
+                        </div>
+                        <h3>Clipboard</h3>
+                    </div>
+                    <div class="header-drawer-item">
+                        <div class="header-drawer-item-content">
+                            <div>
+                                <span class="fa-solid fa-font darkblue"></span>
+                                <p>Change font</p>
+                            </div>
+                        </div>
+                        <h3 class="big">Font</h3>
+                    </div>
+                    <div class="header-drawer-item">
+                        <div class="header-drawer-item-content">
+                            <div onclick="addElement(currentEdit, 'p')">
+                                <span class="fa-solid fa-paragraph darkblue"></span>
+                                <p>Add Paragraph</p>
+                            </div>
+                            <div onclick="addElement(currentEdit, 'h1')">
+                                <span class="fa-solid fa-heading darkblue">1</span>
+                                <p>Add H1</p>
+                            </div>
+                            <div onclick="addElement(currentEdit, 'h2')">
+                                <span class="fa-solid fa-heading darkblue">2</span>
+                                <p>Add H2</p>
+                            </div>
+                            <div onclick="addElement(currentEdit, 'h3')">
+                                <span class="fa-solid fa-heading darkblue">3</span>
+                                <p>Add H3</p>
+                            </div>
+                            <div onclick="addElement(currentEdit, 'h4')">
+                                <span class="fa-solid fa-heading darkblue">4</span>
+                                <p>Add H4</p>
+                            </div>
+                            <div onclick="deleteElement(currentEdit)">
+                                <span class="fa-solid fa-trash-can red"></span>
+                                <p>Delete Element</p>
+                            </div>
+                        </div>
+                        <h3 class="big">Element</h3>
+                    </div>
+                    <div class="header-drawer-item">
+                        <div class="header-drawer-item-content">
+                            <div onclick="setBold(currentEdit)">
+                                <span class="fa-solid fa-bold darkblue"></span>
+                                <p>Bold</p>
+                            </div>
+                            <div onclick="setItalic(currentEdit)">
+                                <span class="fa-solid fa-italic darkblue"></span>
+                                <p>Italic</p>
+                            </div>
+                            <div onclick="setUnderline(currentEdit)">
+                                <span class="fa-solid fa-underline darkblue"></span>
+                                <p>Underline</p>
+                            </div>
+                            <div onclick="showColorPicker(currentEdit)">
+                                <span class="fa-solid fa-eye-dropper wdColorDarkBlue" id="dropper"></span>
+                                <p>Set Color</p>
+                            </div>
+                        </div>
+                        <h3 class="big">Style</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="content" class="content">
+            <div class="document-editor" id="document-editor" aria-hidden="true">
+
+            </div>
+            <div class="document-content" id="document-content">
+                <h1>Hello World</h1>
+                <p>This is a paragraph</p>
+            </div>
+
+            <div class="color-picker" id="color-picker" style="display: none;">
+                <div class="color-picker-div" id="color-picker-div">
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorAqua">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorAutomatic">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorBlack">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorBlue">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorBlueGray">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorBrightGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorBrown">&nbsp</div>
+
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorDarkBlue">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorDarkGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorDarkRed">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorDarkTeal">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorDarkYellow">&nbsp</div>
+                    
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGold">&nbsp</div>
+
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray05">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray10">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray125">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray15">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray20">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray25">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray30">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray35">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray375">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray40">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray45">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray50">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray55">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray60">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray625">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray65">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray70">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray75">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray80">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray85">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray875">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray90">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGray95">&nbsp</div>
+
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorIndigo">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLavender">&nbsp</div>
+
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLightBlue">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLightGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLightOrange">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLightTurquoise">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLightYellow">&nbsp</div>
+                    
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorLime">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorOliveGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorOrange">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorPaleBlue">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorPink">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorPlum">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorRed">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorRose">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorSeaGreen">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorSkyBlue">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorTan">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorTeal">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorTurquoise">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorViolet">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorWhite">&nbsp</div>
+                    <div onclick="selectColor(this)" class="color-picker-color wdColorYellow">&nbsp</div>
+                </div>
+                <div class="color-picker-div2" id="color-picker-div2">
+                    <div class="color-picker-top">
+                        <h2>Text foreground</h2>
+                        <p id="color-picker-example">Example text</p>
+                    </div>
+                    <div class="color-picker-bottom">
+                        <div onclick="setColorPickerColor()" class="color-picker-div-button-blue">OK</div>
+                        <div onclick="hideColorPicker()" class="color-picker-div-button">Cancel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-div" class="error-div" style="display: none;">
+            <div>
+                <h1>Error</h1>
+                <p id="error-content">
+                    Lorem Ipsum
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-top">
+                <h2>DDev Docs</h4>
+                <h4>DDev - 2022</h4>
+            </div>
+            <div class="footer-bottom">
+                <a href="/docs">Home</a>
+                <!-- <a href="/docs/document?action=new">New</a> -->
+                <a href="/docs/document?action=open">Open</a>
+            </div>
+        </footer>
+
+        <script src="/docs/assets/js/document.js" id="document-script"></script>
+        <script src="/docs/assets/js/link.js"></script>
+    </body>
+</html>
