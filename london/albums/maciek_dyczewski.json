@@ -1,0 +1,17 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "maciek_dyczewski": {
+            "credit": "Maciek Dyczewski",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "maciek_dyczewski1",
+                    "url": "/london/fb/photos/310357730_1814509345564987_5253234109339158150_n_1814509338898321.jpg",
+                    "name": "Unknown"
+                }
+            }
+        }
+    }
+}

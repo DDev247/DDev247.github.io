@@ -57,13 +57,6 @@
 
         <div id="content" class="content">
             <h1 class="center">Explore</h1>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=zosia&authorName=Zosia-Kowalczyk'; a.click(); a.remove()" class="view-button">View Photos by Zofia Kowalczyk</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=bartek&authorName=Bartek-Kopecki'; a.click(); a.remove()" class="view-button">View Photos by Bartek Kopecki</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=oliwier&authorName=Oliwier-Kondziewski'; a.click(); a.remove()" class="view-button">View Photos by Oliwier Kondziewski</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=dawid&authorName=Dawid-Byro'; a.click(); a.remove()" class="view-button">View Photos by Dawid Byro</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=jakubm&authorName=Jakub-Motybel'; a.click(); a.remove()" class="view-button">View Photos by Jakub Motybel</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=janulewicz&authorName=Aleksandra-Janulewicz'; a.click(); a.remove()" class="view-button">View Photos by Aleksandra Janulewicz</div>
-            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=murawska&authorName=Aleksandra-Murawska'; a.click(); a.remove()" class="view-button">View Photos by Aleksandra Murawska</div>
         </div>
 
         <footer>
@@ -79,5 +72,29 @@
 
         <script id="functionalityScript" src="/london/js/functionality.js"></script>
 
+        <script>
+            async function stuff () {
+                const response = await fetch("/london/albums/albums.json");
+                const json = await response.json();
+                Object.keys(json).forEach(album => {
+                    /*
+            <div onclick="let a = document.createElement('a'); a.href='/london/explore/list.html?album=id&authorName=Name-Surname'; a.click(); a.remove()" class="view-button">View Photos by Name</div>
+                    */
+                    let out = document.createElement('div');
+                    out.onclick = () => {
+                        let a = document.createElement('a');
+                        a.href = `/london/explore/list.html?album=${album}&authorName=${json[album].replace(" ", "-")}`;
+                        a.click();
+                        a.remove();
+                    }
+                    out.classList.add("view-button");
+                    out.innerHTML = "View Photos by " + json[album];
+
+                    document.getElementById("content").appendChild(out);
+                });
+            }
+
+            stuff();
+        </script>
     </body>
 </html>

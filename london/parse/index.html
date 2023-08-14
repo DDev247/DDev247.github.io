@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>London Photos Facebook Parser</title>
+    </head>
+    <body>
+
+        <h1>London Photos Facebook Parser</h1>
+        <h3><i>No styles because they are not needed</i></h3>
+        <i>Open the console dood</i>
+
+        <button onclick="run()">Generate</button>
+
+        <br>
+        <label for="autoDownload">Automatically download</label>
+        <input id="autoDownload" type="checkbox"/>
+
+        <div style="display: flex; flex-direction: column;">
+            <h3>Output</h3>
+        </div>
+
+    </body>
+    <script>
+        // Replace the values to suit your path + Messenger group path
+        const rootJsonPath = "/london/fb/message_1.json";
+        const uriReplace = ["messages/inbox/londyn_5228345357278949", "/london/fb"];
+
+        function idify(string) {
+            let out = string.replace(" ", "_");
+            out = out.normalize();
+            return out.toLowerCase();
+        }
+
+        async function run() {
+            console.log("Working...");
+
+            // Fetch the root JSON
+            let response = await fetch(rootJsonPath);
+            const rootJson = await response.json();
+            console.log("JSON retrieved:");
+            console.log(rootJson);
+
+            let outputJson = {};
+
+            rootJson.messages.forEach(message => {
+                let name = message.sender_name.normalize();
+                if(!Object.keys(message).includes("photos")) {
+                    console.log("Generic message by %s skipped...", name);
+                    return;
+                }
+
+                // Do something with the message
+                let id = idify(name);
+                if(Object.keys(outputJson).includes(name)) {
+                    let keys = Object.keys(outputJson[name].photos[id].photos);
+
+                    let index = Number.parseInt(keys[keys.length - 1]) + 1;
+                    console.log("next index: %i", index);
+                    message.photos.forEach((photo) => {
+                        outputJson[name].photos[id].photos[index] = {
+                            "id": id + index,
+                            "url": photo.uri.replace(uriReplace[0], uriReplace[1]),
+                            "name": "Unknown"
+                        };
+                        index++;
+                    });
+                }
+                else {
+                    let out = {
+                        "type": "photoViewer",
+                        "photos": {}
+                    };
+
+                    out.photos[id] = {
+                        "credit": name,
+                        "description": "Photos",
+                        "year": "2022",
+                        "photos": {}
+                    }
+
+                    let photos = {};
+                    let index = 1;
+                    message.photos.forEach((photo) => {
+                        photos[index] = {
+                            "id": id + index,
+                            "url": photo.uri.replace(uriReplace[0], uriReplace[1]),
+                            "name": "Unknown"
+                        };
+                        index++;
+                    });
+
+                    out.photos[id].photos = photos;
+                    outputJson[name] = out;
+                }
+            });
+
+            const output = document.querySelector("div");
+            Object.keys(outputJson).forEach(outKey => {
+                const blob = new Blob([JSON.stringify(outputJson[outKey], null, 4)], {
+                    type: "application/json",
+                });
+
+                let out = document.createElement('a');
+                out.href = URL.createObjectURL(blob);
+                out.innerHTML = outKey;               
+                out.download = idify(outKey);               
+                
+                output.appendChild(out);
+            });
+
+            if(document.getElementById("autoDownload").checked) {
+                let i = 1;
+                const tid = setInterval(() => {
+                    if(i > output.children.length) {
+                        clearInterval(tid);
+                    }
+                    else {
+                        output.children[i].click();
+                    }
+                    i++;
+                }, 500);
+            }
+        }
+    </script>
+</html>

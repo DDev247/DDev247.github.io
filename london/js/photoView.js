@@ -39,7 +39,7 @@ function Get(yourUrl){
 
 window.addEventListener('load', (event) => {
     let handler = document.getElementById(HANDLER_ID);
-    let json = JSON.parse(Get(URL + _ALBUM + "/photos.json"));
+    let json = JSON.parse(Get("/london/albums/" + _ALBUM + ".json"));
 
     if(json.type == "photoViewer") {
         let main = json.photos[_ALBUM];

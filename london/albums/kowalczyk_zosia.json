@@ -1,0 +1,32 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "kowalczyk_zosia": {
+            "credit": "Kowalczyk Zosia",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "kowalczyk_zosia1",
+                    "url": "/london/fb/photos/309932970_819089686029124_5182266479708423857_n_819089679362458.jpg",
+                    "name": "Unknown"
+                },
+                "2": {
+                    "id": "kowalczyk_zosia2",
+                    "url": "/london/fb/photos/308505951_1168678710403258_7398740841671285681_n_1168678703736592.jpg",
+                    "name": "Unknown"
+                },
+                "3": {
+                    "id": "kowalczyk_zosia3",
+                    "url": "/london/fb/photos/277951196_1318791762282823_7921027775372180086_n_1318791755616157.jpg",
+                    "name": "Unknown"
+                },
+                "4": {
+                    "id": "kowalczyk_zosia4",
+                    "url": "/london/fb/photos/309624917_638805157800744_8596587422441823089_n_638805154467411.jpg",
+                    "name": "Unknown"
+                }
+            }
+        }
+    }
+}

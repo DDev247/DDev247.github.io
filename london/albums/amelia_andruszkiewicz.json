@@ -1,0 +1,27 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "amelia_andruszkiewicz": {
+            "credit": "Amelia Andruszkiewicz",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "amelia_andruszkiewicz1",
+                    "url": "/london/fb/photos/311062453_798188421487638_530209843205553753_n_798188418154305.jpg",
+                    "name": "Unknown"
+                },
+                "2": {
+                    "id": "amelia_andruszkiewicz2",
+                    "url": "/london/fb/photos/311075208_799604794639943_5662626396710666913_n_799604791306610.jpg",
+                    "name": "Unknown"
+                },
+                "3": {
+                    "id": "amelia_andruszkiewicz3",
+                    "url": "/london/fb/photos/284970439_3193673587562914_874430448575857914_n_3193673584229581.jpg",
+                    "name": "Unknown"
+                }
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ function getParameterByName(name, url = window.location.href) {
 
 const _NAME = getParameterByName("authorName");
 const _ALBUMM = getParameterByName("album");
-document.getElementById("viewerScript").setAttribute("cURL", "/london/photos/" + _ALBUMM);
+document.getElementById("viewerScript").setAttribute("cURL", "/london/albums/" + _ALBUMM);
 photoLoad();
 
 HEADER.textContent = `Photos by ${_NAME.split('-')[0]} ${_NAME.split('-')[1]}`;

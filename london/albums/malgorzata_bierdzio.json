@@ -1,0 +1,22 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "malgorzata_bierdzio": {
+            "credit": "Małgorzata Bierdzio",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "malgorzata_bierdzio1",
+                    "url": "/london/fb/photos/274107796_802329524317491_3522817315725866515_n_802329514317492.jpg",
+                    "name": "Unknown"
+                },
+                "2": {
+                    "id": "malgorzata_bierdzio2",
+                    "url": "/london/fb/photos/311871782_630369671882905_2408083283256359047_n_630369668549572.jpg",
+                    "name": "Unknown"
+                }
+            }
+        }
+    }
+}

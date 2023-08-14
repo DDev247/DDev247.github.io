@@ -23,7 +23,7 @@ const photoLoad = () => {
     const HEIGHT = document.getElementById("viewerScript").getAttribute("cHeight");
 
     let handler = document.getElementById(HANDLER_ID);
-    let json = JSON.parse(Get(URL + "/photos.json"));
+    let json = JSON.parse(Get(URL + ".json"));
 
     if(json.type == "photoViewer") {
         if(_ALBUM == undefined || _ALBUM == "") {

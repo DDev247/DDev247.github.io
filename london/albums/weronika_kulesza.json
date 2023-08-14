@@ -1,0 +1,52 @@
+{
+    "type": "photoViewer",
+    "photos": {
+        "weronika_kulesza": {
+            "credit": "Weronika Kulesza",
+            "description": "Photos",
+            "year": "2022",
+            "photos": {
+                "1": {
+                    "id": "weronika_kulesza1",
+                    "url": "/london/fb/photos/311034034_694895034864821_4520861361620801687_n_694895024864822.jpg",
+                    "name": "Unknown"
+                },
+                "2": {
+                    "id": "weronika_kulesza2",
+                    "url": "/london/fb/photos/311867150_1195330454389346_8020295879343585033_n_1195330451056013.jpg",
+                    "name": "Unknown"
+                },
+                "3": {
+                    "id": "weronika_kulesza3",
+                    "url": "/london/fb/photos/310981699_500161458791746_4872657060814941157_n_500161445458414.jpg",
+                    "name": "Unknown"
+                },
+                "4": {
+                    "id": "weronika_kulesza4",
+                    "url": "/london/fb/photos/311424137_433060322306301_8541799090480995191_n_433060308972969.jpg",
+                    "name": "Unknown"
+                },
+                "5": {
+                    "id": "weronika_kulesza5",
+                    "url": "/london/fb/photos/310361074_1126490474919238_8287490698458822054_n_1126490468252572.jpg",
+                    "name": "Unknown"
+                },
+                "6": {
+                    "id": "weronika_kulesza6",
+                    "url": "/london/fb/photos/309405828_830685351615641_5567502745058911384_n_830685341615642.jpg",
+                    "name": "Unknown"
+                },
+                "7": {
+                    "id": "weronika_kulesza7",
+                    "url": "/london/fb/photos/311997845_2200644580105659_4942249783973242591_n_2200644576772326.jpg",
+                    "name": "Unknown"
+                },
+                "8": {
+                    "id": "weronika_kulesza8",
+                    "url": "/london/fb/photos/310872234_800435371073650_1803052135127206170_n_800435367740317.jpg",
+                    "name": "Unknown"
+                }
+            }
+        }
+    }
+}
