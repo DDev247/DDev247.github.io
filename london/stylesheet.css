@@ -1,7 +1,15 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        margin: 15px;
+        background-color: #181a1b;
+    }
+}
 
-body {
-    margin: 15px;
-    background-color: #181a1b;
+@media (prefers-color-scheme: light) {
+    body {
+        margin: 15px;
+        background-color: white;
+    }
 }
 
 body.white {
@@ -251,41 +259,41 @@ footer div p a {
 }
 
 .home-photos img {
-    opacity: 0.5;
+    scale: 1;
     border-radius: 5px;
 
     margin-right: 10px;
     margin-bottom: 10px;
     
-    transition: opacity 500ms;
+    transition: scale 500ms;
 }
 
 .home-photos.mobile img {
-    opacity: 0.5;
+    scale: 1;
     border-radius: 5px;
 
     margin-right: 10px;
     margin-bottom: 10px;
     
-    transition: opacity 250ms;
+    transition: scale 250ms;
 }
 
 .home-photos img:hover {
-    opacity: 0.85;
+    scale: 1.1;
 }
 
 .list-photos img {
-    opacity: 0.85;
+    scale: 1;
     border-radius: 5px;
 
     margin-right: 10px;
     margin-bottom: 10px;
     
-    transition: opacity 500ms;
+    transition: scale 500ms;
 }
 
 .list-photos img:hover {
-    opacity: 0.95;
+    scale: 1.1;
 }
 
 .view-handler {

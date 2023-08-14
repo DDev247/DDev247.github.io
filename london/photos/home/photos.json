@@ -1,74 +1,74 @@
 {
     "type": "photoViewer",
     "photos": {
-        "zosia": {
+        "kowalczyk_zosia": {
             "credit": "Zofia Kowalczyk",
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
                 "1": {
-                    "id": "zosia1",
+                    "id": "kowalczyk_zosia1",
                     "url": "/london/photos/home/zosia1.jpg",
                     "name": "Camden Road"
                 },
                 "2": {
-                    "id": "zosia2",
+                    "id": "kowalczyk_zosia2",
                     "url": "/london/photos/home/zosia2.jpg",
                     "name": "National Gallery"
                 },
                 "3": {
-                    "id": "zosia3",
+                    "id": "kowalczyk_zosia3",
                     "url": "/london/photos/home/zosia3.jpg",
                     "name": "Grafitti"
                 }
             }
         },
-        "bartek": {
+        "bartek_kopecki": {
             "credit": "Bartek Kopecki",
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
                 "1": {
-                    "id": "bartek1",
+                    "id": "bartek_kopecki1",
                     "url": "/london/photos/home/bartek1.jpg",
                     "name": "Big Ben"
                 },
                 "2": {
-                    "id": "bartek2",
+                    "id": "bartek_kopecki2",
                     "url": "/london/photos/home/bartek2.jpg",
                     "name": "Natural History Museum"
                 }
             }
         },
-        "oliwier": {
+        "oliwier_kondziewski": {
             "credit": "Oliwier Kondziewski",
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
                 "1": {
-                    "id": "oliwier1",
+                    "id": "oliwier_kondziewski1",
                     "url": "/london/photos/home/oliwier1.jpg",
                     "name": "City"
                 },
                 "2": {
-                    "id": "oliwier2",
+                    "id": "oliwier_kondziewski2",
                     "url": "/london/photos/home/oliwier2.jpg",
                     "name": "Buckingham Palace"
                 }
             }
         },
-        "dawid": {
+        "dawid_byro": {
             "credit": "Dawid Byro",
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
                 "1": {
-                    "id": "dawid1",
+                    "id": "dawid_byro1",
                     "url": "/london/photos/home/dawid1.jpg",
                     "name": "Sky"
                 },
                 "2": {
-                    "id": "dawid2",
+                    "id": "dawid_byro2",
                     "url": "/london/photos/home/dawid2.jpg",
                     "name": "Blue Whale Skeleton"
                 }
