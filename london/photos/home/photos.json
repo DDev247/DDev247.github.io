@@ -28,13 +28,13 @@
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
-                "1": {
-                    "id": "bartek_kopecki1",
+                "4": {
+                    "id": "bartek_kopecki4",
                     "url": "/london/photos/home/bartek1.jpg",
                     "name": "Big Ben"
                 },
-                "2": {
-                    "id": "bartek_kopecki2",
+                "3": {
+                    "id": "bartek_kopecki3",
                     "url": "/london/photos/home/bartek2.jpg",
                     "name": "Natural History Museum"
                 }
@@ -45,13 +45,13 @@
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
-                "1": {
-                    "id": "oliwier_kondziewski1",
+                "15": {
+                    "id": "oliwier_kondziewski15",
                     "url": "/london/photos/home/oliwier1.jpg",
                     "name": "City"
                 },
-                "2": {
-                    "id": "oliwier_kondziewski2",
+                "10": {
+                    "id": "oliwier_kondziewski10",
                     "url": "/london/photos/home/oliwier2.jpg",
                     "name": "Buckingham Palace"
                 }
@@ -62,13 +62,13 @@
             "description": "Homepage Photos",
             "year": "2022",
             "photos": {
-                "1": {
-                    "id": "dawid_byro1",
+                "118": {
+                    "id": "dawid_byro118",
                     "url": "/london/photos/home/dawid1.jpg",
                     "name": "Sky"
                 },
-                "2": {
-                    "id": "dawid_byro2",
+                "92": {
+                    "id": "dawid_byro92",
                     "url": "/london/photos/home/dawid2.jpg",
                     "name": "Blue Whale Skeleton"
                 }
