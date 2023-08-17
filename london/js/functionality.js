@@ -8,6 +8,14 @@ if (prefersDarkScheme.matches) {
     DARK_MODE = false;
 }
 
+/*let ls = localStorage.getItem("londonDarkMode");
+if (ls == "true") {
+    DARK_MODE = true;
+}
+else if (ls === "false") {
+    DARK_MODE = false;
+}*/
+
 function dark() {
     if(document.body.classList.contains("checked"))
         DARK_MODE = !DARK_MODE;
@@ -18,31 +26,41 @@ function dark() {
     var darkLogo = document.getElementById("darkLogo");
     var darkLogoMobile = document.getElementById("darkLogoMobile");
 
-    logo.style = DARK_MODE ? "" : "display: none;";
-    logoMobile.style = DARK_MODE ? "" : "display: none;";
-    darkLogo.style = DARK_MODE ? "display: none;" : "";
-    darkLogoMobile.style = DARK_MODE ? "display: none;" : "";
+    logo.style = DARK_MODE ? "display: none;" : "";
+    logoMobile.style = DARK_MODE ? "display: none;" : "";
+    darkLogo.style = DARK_MODE ? "" : "display: none;";
+    darkLogoMobile.style = DARK_MODE ? "" : "display: none;";
 
-    body.classList.toggle("dark");
     
     var elems = document.body.getElementsByTagName("*");
     for (let i = 0; i < elems.length; i++) {
         let element = elems[i];
-        element.classList.toggle("dark");
+        if(!DARK_MODE) {
+            element.classList.add("white");
+            element.classList.remove("dark");
+        }
+        else {
+            element.classList.remove("white");
+            element.classList.add("dark");
+        }
     }
 
     if(!DARK_MODE) {
-        document.body.classList.add("white");
+        body.classList.add("white");
+        body.classList.remove("dark");
     }
     else {
-        document.body.classList.remove("white");
+        body.classList.remove("white");
+        body.classList.add("dark");
     }
-    document.body.classList.add("checked");
+    body.classList.add("checked");
+
+    // save
+    // localStorage.setItem("londonDarkMode", DARK_MODE);
 }
 
 function check() {
-    if(DARK_MODE)
-        dark();
+    dark();
 
     let header = document.body.getElementsByTagName('header')[0];
     let photoHandler = document.getElementById("photos");
